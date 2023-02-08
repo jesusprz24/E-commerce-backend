@@ -21,7 +21,8 @@ THEN I am able to successfully create, update, and delete data in my database
 # Installation
 - To use this the user first needs to clone this repo into their terminal.
 - To run the database, run mysql -u root -p in the terminal and enter the password from the .env file.
-- Next source the schema.sqk to the seed file and enter npm run seed
+- Next run npm install in the terminal
+- Run npm run seed
 - Finally to run the server type npm start.
 
 # License
