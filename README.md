@@ -27,4 +27,4 @@ THEN I am able to successfully create, update, and delete data in my database
 
 # License
 This application uses an MIT license.
-# Walkthrough Video
+# Walkthrough Video:
