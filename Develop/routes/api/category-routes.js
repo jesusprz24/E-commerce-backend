@@ -35,13 +35,13 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-  .then( data => {
+  .then(data => {
     res.json(data);
   })
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
-  })
+  });
 });
 
 router.post('/', (req, res) => {
@@ -64,8 +64,11 @@ router.put('/:id', (req, res) => {
     }
   })
   .then(data => {
+    res.json(data);
+  })
+  .catch(err => {
     console.log(err);
-    res.status(500)
+    res.status(500).json(err);
   });
 });
 
