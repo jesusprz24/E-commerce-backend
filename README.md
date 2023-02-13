@@ -19,11 +19,16 @@ WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
 
 # Installation
-- To use this the user first needs to clone this repo into their terminal.
-- To run the database, run mysql -u root -p in the terminal and enter the password from the .env file.
-- Next run npm install in the terminal
-- Run npm run seed
-- Finally to run the server type npm start.
+- Clone the repository into the terminal
+- This requires the use of node.js and MySQL, they must be installed to the computer
+- Type npm install or npm i
+- Connect to the database usinf the following commands
+    - mysql -u root -p
+    - when mysql is opened type source schema.sql
+    - Then npm run seed (for the seed file)
+- Now to run the app type npm start. 
+- Finally use insomnia core to see if it is working. Or visit the walkthrough video.
+
 
 # License
 This application uses an MIT license.
