@@ -19,13 +19,36 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('./id'), (res, res) => {
   // find a single tag by its `id`
-  // be sure to include its associated Product data
-});
+  // be sure to include ts associated Product data
+  Tag.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: {
+      model: Product,
+      attributes: ['product_name', 'price', 'stock', 'category_id']
+    }
+  })
+
+  .then(dbTagData => res.json(dbTagData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+};
 
 router.post('/', (req, res) => {
   // create a new tag
+  Tag.creete({
+    tag_name: req.body.tag_name
+  })
+  .then(dbTagData => res.json(dbTagData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
