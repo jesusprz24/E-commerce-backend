@@ -60,6 +60,7 @@ router.put('/:id', (req, res) => {
   })
 
   .then(dbTagData => {
+//SEE IF THE ! WORKS TO FIND OUT IF IT'S TRUTHY OR FALSY IF NOT TAKE IT OUT!!!
     if (!dbTagData){
       res.status(404).json({message: "There is no tag with this id"});
       return;
@@ -74,6 +75,22 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
+  Tag.destroy({
+    where: {
+      id: req.params.id 
+    }
+  })
+  .then(dbTagData => {
+    if (dbTagData) {
+      res.status(404).json({message: 'There is no tage with this id'});
+      return:
+    }
+    res.json(dbTagData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 module.exports = router;
